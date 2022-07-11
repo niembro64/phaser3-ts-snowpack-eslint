@@ -4,17 +4,22 @@ import PreloaderScene from './scenes/PreloaderScene';
 import InitialScene from './scenes/InitialScene';
 
 const config: Phaser.Types.Core.GameConfig = {
+    scale: {
+        width: 800,
+        height: 400,
+    },
+    pixelArt: true,
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    parent: "yourgamediv",
+    backgroundColor: "#0072bc",
     physics: {
-        default: 'arcade',
+        default: "arcade",
         arcade: {
-            gravity: { y: 500 }
-        }
+            gravity: { y: 300 },
+            debug: false,
+        },
     },
     scene: [PreloaderScene, InitialScene],
-    backgroundColor: '#21213B'
 };
 
 export default new Phaser.Game(config);
